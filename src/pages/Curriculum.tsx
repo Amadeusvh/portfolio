@@ -1,13 +1,17 @@
-import React from "react";
-import { CurriculumWrapper, InformationHeader, HeaderSpan, Link } from "../components/CurriculumComponents";
+import React from 'react';
+import parser from 'bbcode-to-react';
+import about from '../mocks/about';
+import habilities from '../mocks/habilitiesMock';
+import { CurriculumWrapper, Section, HeaderSpan, Link, Title, About, Bg, Habilities } from '../components/CurriculumComponents';
 
 const Curriculum = () => {
   return (
+  <Bg>
   <CurriculumWrapper>
     <h1>Gabriel Vilar Martins</h1>
     <h3>FullStack Web Developer</h3>
 
-    <InformationHeader>
+    <Section>
       <HeaderSpan>(51) 986100259</HeaderSpan>
       <HeaderSpan>gabrielvilarmartins@gmail.com</HeaderSpan>
       <HeaderSpan>
@@ -16,10 +20,35 @@ const Curriculum = () => {
       <HeaderSpan>
         <Link href="https://github.com/Amadeusvh">GitHub</Link>
       </HeaderSpan>
-    </InformationHeader>
+      <h4>20 anos, Porto Alegre - RS</h4>
+    </Section>
+
+    <Section>
+      <Title>Sobre</Title>
+      <About>{parser.toReact(about())}</About>
+    </Section>
+
+    <Section>
+      <Title>Habilidades</Title>
+      <Habilities>
+        {habilities().map((String) => <div>{ String }</div>)}
+      </Habilities>
+    </Section>
+
+    <Section>
+      <Title>Formação</Title>
+    </Section>
+
+    <Section>
+      <Title>Experiência</Title>
+    </Section>
+
+    <Section>
+      <Title>Projetos</Title>
+    </Section>
     
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo vero temporibus obcaecati dolorum eligendi perferendis nostrum debitis neque ad, voluptates sunt voluptatibus veritatis, ex tempore? Minus vitae tempore adipisci debitis?</p>
   </CurriculumWrapper>
+  </Bg>
 
   );
 };
