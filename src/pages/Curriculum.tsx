@@ -1,54 +1,82 @@
 import React from 'react';
+import lodash from 'lodash';
 import parser from 'bbcode-to-react';
 import about from '../mocks/about';
-import habilities from '../mocks/habilitiesMock';
-import { CurriculumWrapper, Section, HeaderSpan, Link, Title, About, Bg, Habilities } from '../components/CurriculumComponents';
+import abilities from '../mocks/abilitiesMock';
+import { CurriculumWrapper, Section, HeaderSpan, CLink, CTitle, About, Bg, Abilities, CurriculumList, Ability,} from '../components/Components';
+import projects from '../mocks/projectsCurriculumMock';
+import formation from '../mocks/formationMock';
+import experience from '../mocks/experienceMock';
 
 const Curriculum = () => {
   return (
-  <Bg>
-  <CurriculumWrapper>
-    <h1>Gabriel Vilar Martins</h1>
-    <h3>FullStack Web Developer</h3>
+    <Bg string="#3c3836">
+    <CurriculumWrapper>
+      
+      <h1>Gabriel Vilar Martins</h1>
+      <h3>FullStack Web Developer</h3>
 
-    <Section>
-      <HeaderSpan>(51) 986100259</HeaderSpan>
-      <HeaderSpan>gabrielvilarmartins@gmail.com</HeaderSpan>
-      <HeaderSpan>
-        <Link href="https://www.linkedin.com/in/gabriel-martins-769ba0217/">LinkedIn</Link>
-      </HeaderSpan>
-      <HeaderSpan>
-        <Link href="https://github.com/Amadeusvh">GitHub</Link>
-      </HeaderSpan>
-      <h4>20 anos, Porto Alegre - RS</h4>
-    </Section>
+      <Section>
+        <HeaderSpan>(51)98610-0259</HeaderSpan>
+        <HeaderSpan>gabrielvilarmartins@gmail.com</HeaderSpan>
+        <HeaderSpan>
+          <CLink href="https://www.linkedin.com/in/gabriel-martins-769ba0217/">LinkedIn</CLink>
+        </HeaderSpan>
+        <HeaderSpan>
+          <CLink href="https://github.com/Amadeusvh">GitHub</CLink>
+        </HeaderSpan>
+        <h4>20 anos, Porto Alegre - RS</h4>
+      </Section>
 
-    <Section>
-      <Title>Sobre</Title>
-      <About>{parser.toReact(about())}</About>
-    </Section>
+      <Section>
+        <CTitle>Sobre</CTitle>
+        <About>{parser.toReact(about())}</About>
+      </Section>
 
-    <Section>
-      <Title>Habilidades</Title>
-      <Habilities>
-        {habilities().map((String) => <div>{ String }</div>)}
-      </Habilities>
-    </Section>
+      <Section>
+        <CTitle>Habilidades</CTitle>
+        <Abilities>
+          {lodash.chunk(abilities(), 2)
+          .map(([a, b]) => 
+            <div>
+              <Ability>{ a }</Ability>
+              <Ability>{ b }</Ability>
+            </div>
+          )}
+        </Abilities>
+      </Section>
 
-    <Section>
-      <Title>Formação</Title>
-    </Section>
+      <Section>
+        <CTitle>Formação</CTitle>
+        <CurriculumList>
+          {formation()
+          .map((string, i) =>
+            <About key={i}>
+              <li>{ parser.toReact(string) }</li>
+            </About>
+          )}
+        </CurriculumList>
+      </Section>
 
-    <Section>
-      <Title>Experiência</Title>
-    </Section>
+      <Section>
+        <CTitle>Experiência</CTitle>
+        <CurriculumList>
+          {experience()
+          .map((string, i) => 
+            <About key={i}>
+              <li>{ parser.toReact(string) }</li>
+            </About>
+          )}
+        </CurriculumList>
+      </Section>
 
-    <Section>
-      <Title>Projetos</Title>
-    </Section>
-    
-  </CurriculumWrapper>
-  </Bg>
+      <Section>
+        <CTitle>Projetos</CTitle>
+        <About>{ parser.toReact(projects()) }</About>
+      </Section>
+      
+    </CurriculumWrapper>
+    </Bg>
 
   );
 };
