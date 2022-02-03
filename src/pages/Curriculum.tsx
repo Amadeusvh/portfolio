@@ -3,7 +3,19 @@ import lodash from 'lodash';
 import parser from 'bbcode-to-react';
 import about from '../mocks/about';
 import abilities from '../mocks/abilitiesMock';
-import { CurriculumWrapper, Section, HeaderSpan, CLink, CTitle, About, Bg, Abilities, CurriculumList, Ability,} from '../components/Components';
+import { 
+  CurriculumWrapper,
+  Section, 
+  HeaderSpan, 
+  CLink, 
+  CTitle, 
+  About, 
+  Bg, 
+  Abilities, 
+  CurriculumList, 
+  Ability,
+  Spacer,
+} from '../components/Components';
 import projects from '../mocks/projectsCurriculumMock';
 import formation from '../mocks/formationMock';
 import experience from '../mocks/experienceMock';
@@ -32,6 +44,8 @@ const Curriculum = () => {
         <CTitle>Sobre</CTitle>
         <About>{parser.toReact(about())}</About>
       </Section>
+
+      <Spacer string="160px" />
 
       <Section>
         <CTitle>Habilidades</CTitle>

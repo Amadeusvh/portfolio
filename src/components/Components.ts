@@ -7,8 +7,8 @@ type Props = {
 export const About = styled.p<Props>`
   font-size: ${props => props.string};
   text-align: justify;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 40px;
+  margin-right: 40px;
 `;
 
 export const Abilities = styled.div`
@@ -41,17 +41,25 @@ export const Bg = styled.div<Props>`
   background: ${props => props.string};
 `;
 
-export const Button = styled.button`
-  box-shadow: 10px 10px #1e1f21;
+export const BorderFrame = styled.div`
+  box-shadow: 16px 16px #1e1f21;
   border-color: white;
   border-style: solid;
-  border-radius: 5px;
+  border-radius: 8px;
+`;
+
+export const ButtonRow = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const Button = styled(BorderFrame)`
+  box-shadow: 8px 8px #1e1f21;
   color: white;
-  font-size: 1em;
-  background: none;
   width: 200px;
-  padding: 0.3em;
-  margin: 0.5em;
+  padding: 8px;
+  margin: 8px;
+  text-decoration: underline;
 
   &:hover {
     background: #454b57;
@@ -60,12 +68,13 @@ export const Button = styled.button`
 
 export const CLink = styled.a<Props>`
   color: #83a598;
+  text-decoration: none;
 `;
 
 export const CTitle = styled.h2`
   color: #fb4934;
   margin-top: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 `;
 
 export const CurriculumList = styled.ul`
@@ -84,7 +93,7 @@ export const CurriculumWrapper = styled.div`
 
 export const Technologies = styled.div`
   display: flex;
-  margin-top: 30px;
+  margin-top: 32px;
   justify-content: flex-start;
 `;
 
@@ -93,8 +102,8 @@ export const Tech = styled.span`
   box-shadow: 8px 8px #1e1f21;
   border-style: solid;
   border-color: white;
-  padding: 5px;
-  margin: 5px;
+  padding: 8px;
+  margin: 8px;
 `;
 
 export const HomeWrapper = styled.div`
@@ -106,45 +115,39 @@ export const HomeWrapper = styled.div`
 `;
 
 export const ImageDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+  margin-top: 16px;
   margin-bottom: 40px;
 `;
 
 export const Image = styled.img`
-  box-shadow: 15px 15px #1e1f21;
-  text-align: start;
+  box-shadow: 16px 16px #1e1f21;
   border-color: white;
   border-style: solid;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  width: 500px;
+  border-radius: 8px;
+  width: 480px;
 `;
 
 export const Icon = styled.div`
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: 16px;
+  margin-left: 16px;
 `;
 
 export const Information = styled.div`
   display: flex;
 `;
 
-export const Icons = styled.div`
-  font-size: 15px;
+export const IconRow = styled.div`
+  font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 50px;
-  margin-bottom: -45px;
+  padding-top: 40px;
+  margin-bottom: -40px;
 `;
 
 export const Link = styled.a`
-  width: auto;
   color: white;
-  margin: 20px;
+  margin: 16px;
   text-decoration: none;
 
   &:hover {
@@ -152,11 +155,10 @@ export const Link = styled.a`
   }
 `;
 
-export const LinksDiv = styled.div`
+export const LinkRow = styled.div`
+  display: flex;
   justify-content: center;
   align-items: center;
-  margin: 15px;
-  flex: 1;
 `;
 
 export const Spacer = styled.div<Props>`
@@ -167,27 +169,24 @@ export const Title = styled.h1<Props>`
   font-size: ${props => props.string};
 `;
 
-
 export const Section = styled.div`
   display: flex;
   flex-direction: column ;
 `;
 
 export const HeaderSpan = styled.span`
-  margin-top: 10px;
+  margin-top: 16px;
 `;
 
 export const ProjectName = styled.span`
+  display: flex;
+  align-items: center;
   font-weight: bold;
   font-size: 40px;
 `
 
-export const ProjectsList = styled.div`
-  box-shadow: 17px 17px #1e1f21;
+export const ProjectsList = styled(BorderFrame)`
   text-align: start;
-  border-color: white;
-  border-style: solid;
-  border-radius: 5px;
-  margin: 5px 250px 250px;
-  padding: 30px;
+  margin: 8px 240px 240px;
+  padding: 32px;
 `;

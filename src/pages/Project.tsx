@@ -7,6 +7,7 @@ import {
   ImageDiv,
   Technologies,
   Tech,
+  Icon,
   ProjectName,
 } from "../components/Components";
 import { Github } from "styled-icons/bootstrap";
@@ -18,7 +19,7 @@ const ProjectComponent = ({project}: { project: Project }) => {
 
       <Link target="_blank" href={project.url}>
         <ProjectName>
-          {project.name}<Github size="30px" />
+          <span>{project.name}</span><Icon><Github size="30px" /></Icon>
         </ProjectName>
       </Link>
 

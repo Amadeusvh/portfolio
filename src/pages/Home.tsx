@@ -1,5 +1,15 @@
 import React from "react";
-import { Title, Button, Link ,Spacer, HomeWrapper, LinksDiv, Icon ,Icons } from "../components/Components";
+import { 
+  Title, 
+  Button, 
+  Link,
+  Spacer, 
+  HomeWrapper, 
+  LinkRow, 
+  Icon,
+  IconRow, 
+  ButtonRow,
+} from "../components/Components";
 import { Github, Linkedin } from "styled-icons/bootstrap";
 import { ReactLogo, Styledcomponents } from "styled-icons/simple-icons";
 
@@ -14,28 +24,30 @@ const Home = () => {
 
       <Spacer string="100px"></Spacer>
 
-      <a href="/curriculum"><Button>Curriculum</Button></a>
-      <a href="/projects"><Button>Projects</Button></a>
+      <ButtonRow>
+        <a href="/curriculum"><Button>Curriculum</Button></a>
+        <a href="/projects"><Button>Projects</Button></a>
+      </ButtonRow>
 
       <Spacer string="200px"></Spacer>
 
-      <LinksDiv>
+      <LinkRow>
         <Link target="_blank" href="https://www.linkedin.com/in/gabriel-martins-769ba0217/" >
-          <Linkedin size="30px" /> LinkedIn 
+          <Linkedin size="32px" /> LinkedIn 
         </Link>
         <Link target="_blank" href="https://github.com/Amadeusvh">
-          <Github size="30px" /> Github 
+          <Github size="32px" /> Github 
         </Link>
-      </LinksDiv>
+      </LinkRow>
 
-      <Icons>
+      <IconRow>
         <Icon>
-          <ReactLogo size="20px" />React.JS
+          <ReactLogo size="24px" />React.JS
         </Icon>
         <Icon>
-          <Styledcomponents size="30px" />Styled Componets
+          <Styledcomponents size="40px" />Styled Componets
         </Icon>
-      </Icons>
+      </IconRow>
     
     </HomeWrapper>
   ); 

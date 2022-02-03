@@ -16,7 +16,7 @@ const projects = (): Record<string, Project> => {
       "url": "https://github.com/Amadeusvh/WiredTodo-BackEnd-CRUD",
       "img": "img/todo.png",
       "about": "The FrontEnd of a CRUD TodoList",
-      "techs": ["ReactJS", "ReactBootstrap", "typeScript"],
+      "techs": ["ReactJS", "ReactBootstrap", "TypeScript"],
     },
     "project3": {
       "name": "WiredTodo BACK",

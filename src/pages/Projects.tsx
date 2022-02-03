@@ -1,5 +1,5 @@
 import React from "react";
-import { Title, Spacer, ProjectsList } from "../components/Components";
+import { Title, Spacer, ProjectsList} from "../components/Components";
 import Project from "./Project";
 import projects from "../mocks/projectsMock";
 
@@ -15,7 +15,7 @@ const Projects = () => {
       <ProjectsList>
         {Object.entries(projects()).map(([key, project]) =>
           <Project project={project} key={key} />
-        )}
+          )}
       </ProjectsList>
 
     </div>
